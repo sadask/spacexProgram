@@ -1,0 +1,11 @@
+.normalBtn {
+    background-color: lightgreen;
+    margin: 5px;
+    padding: 2px;
+}
+
+.selectedBtn {
+    background-color: darkgreen;
+    margin: 5px;
+    padding: 2px;
+}
