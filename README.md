@@ -1,8 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+
+## Run on your local
+
+### `git clone https://github.com/sadask/spacexProgram.git`
 
 In the project directory, you can run:
+
+### `npm install`
 
 ### `npm start`
 
@@ -12,57 +16,17 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
+### Code Description in Brief
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. Created app using 'Create React App package"
+2. Created all the components required from this app and placed on src/components dir.
+3. Used ReactDOM’s hydrate method instead of render method to indicate to the DOM renderer that we’re rehydrating the app after a server-side render.
+4. Created an Express Server and Rendering the App Component.
+5. Written server code under server/index.js
+6. In server/index.js, tell Express to serve contents from the build directory as static files.
+7. Used a method from ReactDOMServer, renderToString, to render our app to a static HTML string.
+8. Read the static index.html file from the build folder, inject our app’s static content in the <div> with an id of "root", and send that as the response to the request.
+9. Our server code to work, will need to bundle and transpile it, using webpack and Babel (webpack.server.js,.babelrc.json)
+10. Addded dev:build-server, dev:start, and dev scripts to the package.json file to build and serve our SSR application easily.
+11.  Used nodemon to restart the server when we make changes to it. 
+12. used npm-run-all to run multiple commands in parallel.
